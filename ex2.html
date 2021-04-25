@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+      <meta charset="utf-8">
+      <title></title>
+  </head>
+  <body>
+    <!--
+      <input type="button" value="night" onclick="
+        document.querySelector('body').style.backgroundColor='black';
+        document.querySelector('body').style.color='white';
+      ">
+      <input type="button" value="day" onclick="
+        document.querySelector('body').style.backgroundColor='white';
+        document.querySelector('body').style.color='black';
+      ">
+    "-->
+      <input name="tName" type="button" value="night" onclick="
+        var target = document.querySelector('body');
+
+
+        if ( this.value === 'night') {
+          target.style.backgroundColor='black';
+          target.style.color='white';
+        } else {
+          target.style.backgroundColor='white';
+          target.style.color='black';
+        }
+
+        var textValue = document.getElementsByName('tName');
+
+        var targetValue = this.value;
+
+        if ( this.value == 'night' ) {
+            targetValue = 'day';
+        } else {
+            targetValue = 'night';
+        }
+
+        var i = 0;
+
+        while ( i < textValue.length ) {
+            textValue[i].value = targetValue;
+            
+            i++;
+        }
+
+        // 헬로
+        //alert(this.value);
+      ">
+
+      <input name="tName" type="button" value="night" onclick="
+        var target = document.querySelector('body');
+        if (this.value === 'night') {
+          target.style.backgroundColor='black';
+          target.style.color='white';
+          this.value='day';
+        } else {
+          target.style.backgroundColor='white';
+          target.style.color='black';
+          this.value='night';
+        }
+        // 헬로1
+        //alert(this.value);
+      ">
+
+      <!--
+      onclick 태그를 복사해서 두 개 이상을 만들었을 때, 하나만 정상 작동하는 문제가 발생함. 그래서 this.value === 'night'처럼 중복문을 제거해 줄 필요가 있음.
+      그런데 위처럼 중복을 제거해 줘도 아직 문제가 남아 있음.
+      직접 실행했을 때만 실행된다는 단점이 남아 있음.
+      ex) night 라는 박스가 두 개 생성 돼 있는데, 좌측에 있는 걸 눌러서 야간 모드로 만들면 night가 day로 바뀜과 동시에 화면이 까맣게 변하고 글자가 흰색이 됨. 그런데 우측 버튼은 day로 바뀌지 않고 night인 그대로 남게 됨.
+    -->
+
+  </body>
+</html>
+
+
+<style>
+    .word { background-color: orange; font-style: italic; }
+</style>
+
+<p>HTML의 모든 요소는 해당 요소가 웹 브라우저에 어떻게 보이는가를 결정짓는 display 속성을 가집니다.</p>
+<p><span class="word">span 요소</span>는 텍스트(text)의 특정 부분을 묶는 데 자주 사용되는 <span class="word">인라인(inline) 요소</span>입니다.</p>
+<p>div 요소는 다른 HTML 요소들을 하나로 묶는 데 자주 사용되는 대표적인 블록(block) 요소입니다.</p>
