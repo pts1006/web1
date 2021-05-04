@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script>
+            function nightDayHandler(self){
+            var target = document.querySelector('body');
+            if(self.value === 'night'){
+              target.style.backgroundColor = 'black';
+              target.style.color = 'white';
+              self.value = 'day';
+
+              var alist = document.querySelectorAll('a');
+              var i = 0;
+              while(i < alist.length){
+                alist[i].style.color = 'powderblue';
+                i = i + 1;
+              }
+            } else {
+              target.style.backgroundColor = 'white';
+              target.style.color = 'black';
+              self.value = 'night';
+
+              var alist = document.querySelectorAll('a');
+              var i = 0;
+              while(i < alist.length){
+                alist[i].style.color = 'blue';
+                i = i + 1;
+              }
+            }
+          }
+        </script>
+    </head>
+    <body>
+      <input type="button" value="night" onclick="
+        nightDayHandler(this);
+      ">
+    </body>
+</html>
+
+<!--
+괄호 갯수, 괄호가 끌어 안고 있는 영역, 잘 보고 확인해야 함.
+안 그러면 작동이 안 됨.
+-->
